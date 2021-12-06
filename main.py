@@ -2,12 +2,23 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver import Chrome
+from colorama import Fore
 import time
 
-ig_usuario = input("Porfavor introduce un usuario: ")
-lista_palabras = input("Porfavor introduce un diccionario: ")
+big_text = """
+╔══╗─────╔╗─────╔═══╗────────────╔╗
+╚╣╠╝─────║║─────║╔═╗║────────────║║
+─║║╔══╦╦═╝╠═╦══╗║║─╚╬══╦═╗╔═══╦══╣║╔══╦═══╗
+─║║║══╬╣╔╗║╔╣╔╗║║║╔═╣╔╗║╔╗╬══║║╔╗║║║║═╬══║║
+╔╣╠╬══║║╚╝║║║╚╝║║╚╩═║╚╝║║║║║══╣╔╗║╚╣║═╣║══╣
+╚══╩══╩╩══╩╝╚══╝╚═══╩══╩╝╚╩═══╩╝╚╩═╩══╩═══╝
+"""
+print(Fore.YELLOW, big_text)
 
-s = Service("C:/Users/sgonz/Desktop/chromedriver")
+ig_usuario = input(f"{Fore.GREEN}Porfavor introduce un usuario: {Fore.RED}")
+lista_palabras = input(f"{Fore.GREEN}Porfavor introduce un diccionario: {Fore.RED}")
+
+s = Service("C:/Users/sgonz/PycharmProjects/insta-fuerza-b/driver/chromedriver")
 
 driver = Chrome(service=s)
 driver.get("https://instagram.com")
